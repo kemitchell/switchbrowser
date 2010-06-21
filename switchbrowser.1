@@ -5,7 +5,7 @@
 .Nm switchbrowser
 .Sh SYNOPSIS            
 .Nm
-.Op Bundle Identifier
+.Op Bundle Identifier or Shorthand
 .Sh DESCRIPTION         
 With an argument,
 .Nm
@@ -16,6 +16,6 @@ lists the bundle identifiers of available applications which can bet set as HTTP
 .Pp
 Options:
 .Bl -tag -width -indent
-.It [Bundle Identifier] (Optional)
-The bundle identifier of the app to be set as the default, e.g. com.apple.Safari. Case sensitive.
+.It [Bundle Identifier or Shorthand] (Optional)
+The bundle identifier of the app to be set as the default, e.g. com.apple.safari. A number of shorthands are also available: safari, firefox, opera, webkit, chrome, camino, flock.
 .El

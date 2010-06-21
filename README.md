@@ -50,5 +50,11 @@ A sample session:
     
     $ switchbrowser org.mozilla.firefox
     HTTP/HTTPS browser set to: org.mozilla.firefox
+    
+“Shorthands” are available for the most common browsers:
 
-Note that browser bundle identifiers are case-sensitive.
+    $ switchbrowser flock
+    HTTP/HTTPS browser set to: com.flock.flock
+    
+    $ switchbrowser chrome
+    HTTP/HTTPS browser set to: com.google.chrome
