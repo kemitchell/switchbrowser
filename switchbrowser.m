@@ -51,9 +51,9 @@ int main (int argc, const char * argv[]) {
 	} else {
 		// set default browser
 		NSString *newBrowserBundleIdentifier = [[[NSString alloc] initWithUTF8String:argv[1]] lowercaseString];
+		[newBrowserBundleIdentifier autorelease];
 		NSString *longhand = [shorthands objectForKey: newBrowserBundleIdentifier];
 		if(longhand){
-			[newBrowserBundleIdentifier release];
 			newBrowserBundleIdentifier = longhand;
 		}
 		
@@ -83,7 +83,6 @@ int main (int argc, const char * argv[]) {
 		}
 	}
 	
-	[shorthands release];
     [pool drain];
     return returnCode;
 }
