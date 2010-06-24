@@ -13,6 +13,7 @@ In the OS X terminal:
     $ git clone git://github.com/kemitchell/switchbrowser.git
     $ cd switchbrowser
 	$ make
+	$ ./switchbrowser
 
 If you would like to install the binary and manpage system-wide:
 	
