@@ -8,18 +8,15 @@ Building and Installation
 
 The source is hosted on [GitHub](http://github.com/kemitchell/switchbrowser).
 
+In the OS X terminal:
+
     $ git clone git://github.com/kemitchell/switchbrowser.git
     $ cd switchbrowser
+	$ make
 
-The easiest way to build the tool is by using the [XCode IDE](http://developer.apple.com/tools/xcode/) provided by Apple. Open the `.xcodeproj`, set the build target to Release, and build. Those who prefer to `gcc` the single source file themselves should `-frameword Foundation` and `-framework ApplicationServices`. Otherwise:
-
-    $ open switchbrowser.xcodeproj
-    # …build the binary…
-
-You will find the binary in ./Build/Release. You can then install system-wide:
-
-    $ sudo cp ./Build/Release/switchbrowser /usr/local/bin/switchbrowser
-    $ sudo chmod a+rwx /usr/local/bin/switchbrowser
+If you would like to install the binary and manpage system-wide:
+	
+	$ sudo make install
 
 Usage
 -----
