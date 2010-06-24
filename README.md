@@ -27,23 +27,27 @@ Usage
 A sample session:
 
     $ switchbrowser
-    Available Browsers:
-     * com.apple.safari (current)
-       com.apple.mobilesafari
-       com.fluidapp.FluidInstance.GMail
-       com.RealNetworks.RealPlayer
-       com.operasoftware.Opera
-       org.webkit.nightly.WebKit
-       net.habilis.validator-sac
-       com.fluidapp.FluidInstance.Toodledo
-       com.mekentosj.papers
-       com.fluidapp.FluidInstance.Google Docs
-       org.mozilla.firefox
-       org.derailer.Paparazzi!
-       com.fluidapp.FluidInstance.Google Calendar
-       com.fluidapp.Fluid
-       com.google.Chrome
-       org.mozilla.camino
+    Usage: switchbrowser <bundle identifier or shorthand>
+
+    Bundle Identifier                                Shorthand
+    ----------------------------------------------------------
+    *com.apple.safari                                safari
+     com.apple.mobilesafari                       
+     com.fluidapp.FluidInstance.GMail             
+     com.RealNetworks.RealPlayer                  
+     com.operasoftware.Opera                         opera
+     com.flock.Flock                                 flock
+     org.webkit.nightly.WebKit                    
+     net.habilis.validator-sac                    
+     com.fluidapp.FluidInstance.Toodledo          
+     com.mekentosj.papers                         
+     com.fluidapp.FluidInstance.Google Docs       
+     org.mozilla.firefox                             firefox
+     org.derailer.Paparazzi!                      
+     com.fluidapp.FluidInstance.Google Calendar   
+     com.fluidapp.Fluid                           
+     com.google.Chrome                               chrome
+    
 
     $ switchbrowser some.other.App
     No such browser available: some.other.App
