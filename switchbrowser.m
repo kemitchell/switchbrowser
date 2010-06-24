@@ -36,24 +36,33 @@ int main (int argc, const char * argv[]) {
 	int returnCode = EXIT_SUCCESS;
 	
 	if(argc < 2) {
-		// no arguments: list available browsers
-		printf("Available Browsers:\n");
+		// no arguments: show usage and list available browsers
+		printf("Usage: switchbrowser <bundle identifier or shorthand>\n");
+		printf("\n");
+		printf("%-45.45s    %s\n", "Bundle Identifier", "Shorthand");
+		printf("----------------------------------------------------------\n");
 		NSUInteger i;
 		for (i = 0; i < availableBrowserCount; i++) {
 			NSString *browserBundleIdentifier = (NSString*)CFArrayGetValueAtIndex(availableBrowsers, i);
 			// note current default browser
 			if([browserBundleIdentifier caseInsensitiveCompare:currentBrowserBundleIdentifier] == NSOrderedSame){
-				printf(" * %s (current)\n", [browserBundleIdentifier UTF8String]);
+				printf("*%-45.45s", [browserBundleIdentifier UTF8String]);
 			}else{
-				printf("   %s\n", [browserBundleIdentifier UTF8String]);
+				printf(" %-45.45s", [browserBundleIdentifier UTF8String]);
 			}
+			// show shorthand if available
+			NSString *shorthand = (NSString*)[[shorthands allKeysForObject:[browserBundleIdentifier lowercaseString]] lastObject];
+			if(shorthand){
+				printf("   %s", [shorthand UTF8String]);
+			}
+			printf("\n");
 		}
 	} else {
 		// set default browser
 		NSString *newBrowserBundleIdentifier = [[[NSString alloc] initWithUTF8String:argv[1]] lowercaseString];
+		[newBrowserBundleIdentifier autorelease];
 		NSString *longhand = [shorthands objectForKey: newBrowserBundleIdentifier];
 		if(longhand){
-			[newBrowserBundleIdentifier release];
 			newBrowserBundleIdentifier = longhand;
 		}
 		
@@ -83,7 +92,6 @@ int main (int argc, const char * argv[]) {
 		}
 	}
 	
-	[shorthands release];
     [pool drain];
     return returnCode;
 }
