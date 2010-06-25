@@ -59,8 +59,8 @@ int main (int argc, const char * argv[]) {
 		}
 	} else {
 		// set default browser
-		NSString *newBrowserBundleIdentifier = [[[NSString alloc] initWithUTF8String:argv[1]] lowercaseString];
-		[newBrowserBundleIdentifier autorelease];
+		NSString *newBrowserBundleIdentifier = [[[NSString alloc] initWithUTF8String:argv[1]] autorelease];
+		newBrowserBundleIdentifier = [newBrowserBundleIdentifier lowercaseString];
 		NSString *longhand = [shorthands objectForKey: newBrowserBundleIdentifier];
 		if(longhand){
 			newBrowserBundleIdentifier = longhand;
